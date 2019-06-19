@@ -5,7 +5,7 @@ This Docker image should contain everything necessary to build an Android apk wi
 ## Running locally
 
 Run this container locally with something like:
-`docker run --rm -it -v $PWD:/data tygerbytes/phonegap-android-builder:latest /bin/bash`
+`docker run --rm -it -v $PWD:/build tygerbytes/phonegap-android-builder:latest /bin/bash`
 
 ## Azure container job
 
