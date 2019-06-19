@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
         git \
         sudo \
         curl \
+    && grep -v 'secure_path' /etc/sudoers > /etc/sudoers \
     && apt-get install -y --no-install-recommends \
         openjdk-8-jre \
         openjdk-8-jdk \
@@ -32,7 +33,7 @@ RUN apt-get update && apt-get install -y \
 # Workdir not used by Azure, but include it for testing
 WORKDIR /build
 
-ENV GRADLE_HOME /opt/gradle/gradle-5.0
+ENV GRADLE_HOME /opt/gradle/gradle-5.4.1
 ENV ANDROID_HOME /opt/android/sdk
 ENV PATH "${GRADLE_HOME}/bin:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools:${PATH}"
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
