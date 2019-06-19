@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
         git \
         sudo \
         curl \
-    && grep -v 'secure_path' /etc/sudoers > /etc/sudoers \
+    && sed -i '/secure_path/d' /etc/sudoers \
     && apt-get install -y --no-install-recommends \
         openjdk-8-jre \
         openjdk-8-jdk \
