@@ -40,6 +40,8 @@ If the build passes locally but fails in the pipeline, remember that scripts exe
 
 ```
 
+Run the included `simulate-azure.sh`, which starts the container and runs the above commands on it, then drops you in an interactive bash shell running as vsts_azpcontainer.
+
 ## Credits
 
 Inspired by https://github.com/crisnao2/docker-phonegap
