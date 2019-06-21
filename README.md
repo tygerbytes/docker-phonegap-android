@@ -1,4 +1,4 @@
-# docker-phonegap-android
+# PhoneGap Android builder - Docker Image
 
 This [Docker image](https://hub.docker.com/r/tygerbytes/phonegap-android-builder) should contain everything necessary to build an Android apk with [Adobe PhoneGap](https://phonegap.com/), e.g. in a build pipeline on [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/).
 
@@ -40,7 +40,9 @@ If the build passes locally but fails in the pipeline, remember that scripts exe
 
 ```
 
-**TIP**: This repo includes a script called `simulate-azure.sh`, which starts the container and runs the above commands on it, then drops you in an interactive bash shell running as **vsts_azpcontainer**. Just clone this repo and run the script.
+* **TIP1**: This repo includes a script called `simulate-azure.sh`, which starts the container and runs the above commands on it, then drops you in an interactive bash shell running as **vsts_azpcontainer**. Just clone this repo and run the script.
+* **TIP2**: See the exact commands the Azure build agent is running by queuing up a diagnostic build. See Microsoft's [troubleshooting guide](https://docs.microsoft.com/en-us/azure/devops/pipelines/troubleshooting?view=azure-devops#get-logs-to-diagnose-problems) for more details.
+
 
 ## Credits
 
