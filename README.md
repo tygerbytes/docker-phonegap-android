@@ -1,5 +1,9 @@
 # PhoneGap Android builder - Docker Image
 
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/tygerbytes/phonegap-android-builder.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/tygerbytes/phonegap-android-builder.svg)
+![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/tygerbytes/phonegap-android-builder/latest.svg)
+
 This [Docker image](https://hub.docker.com/r/tygerbytes/phonegap-android-builder) should contain everything necessary to build an Android apk with [Adobe PhoneGap](https://phonegap.com/), e.g. in a build pipeline on [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/).
 
 ## Running locally
