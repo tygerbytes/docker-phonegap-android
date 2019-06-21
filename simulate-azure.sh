@@ -8,7 +8,7 @@ then
 fi
 
 echo 'Starting Docker container'
-containerId=$(docker run --rm -id --name phonegap-android -v $PWD:/build tygerbytes/phonegap-android-builder:latest)
+containerId=$(docker run --rm -id --name phonegap-android -v $PWD:/work tygerbytes/phonegap-android-builder:latest)
 
 echo Try create an user with UID '1001' inside the container.
 docker exec $containerId bash -c "grep 1001 /etc/passwd | cut -f1 -d:"

@@ -31,8 +31,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /tmp/* \
     && rm -rf /var/lib/apt/lists/*
 
-# Workdir not used by Azure, but include it for testing
-WORKDIR /build
+WORKDIR /work
 
 ENV GRADLE_HOME /opt/gradle/gradle-5.4.1
 ENV ANDROID_HOME /opt/android/sdk
