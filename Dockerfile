@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
         unzip \
         nodejs \
         npm \
+        libxml2-utils \
     && npm -g install phonegap \
     && curl -L https://services.gradle.org/distributions/gradle-5.4.1-bin.zip -o /tmp/gradle-bin.zip \
     && mkdir -p /opt/gradle && unzip -d /opt/gradle /tmp/gradle-*.zip \
