@@ -7,13 +7,13 @@ RUN apt-get update && apt-get install -y \
         sudo \
         curl \
     && sed -i '/secure_path\|env_reset/d' /etc/sudoers \
+    && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get install -y --no-install-recommends \
         openjdk-8-jre \
         openjdk-8-jdk \
         zip \
         unzip \
         nodejs \
-        npm \
         libxml2-utils \
     && npm -g install phonegap@~8 \
     && curl -L https://services.gradle.org/distributions/gradle-5.5.1-bin.zip -o /tmp/gradle-bin.zip \
@@ -28,7 +28,6 @@ RUN apt-get update && apt-get install -y \
         "platforms;android-28" \
         "platforms;android-29" \
     && apt-get remove -y \
-        curl \
         zip \
         unzip  \
     && apt-get autoremove -y \
@@ -39,7 +38,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /work
 
-ENV GRADLE_HOME /opt/gradle/gradle-5.4.1
+ENV GRADLE_HOME /opt/gradle/gradle-5.5.1
 ENV ANDROID_HOME /opt/android/sdk
 ENV PATH "${GRADLE_HOME}/bin:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools:${PATH}"
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
