@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
         git \
         sudo \
         curl \
-    && sed -i '/secure_path/d' /etc/sudoers \
+    && sed -i '/secure_path\|env_reset/d' /etc/sudoers \
     && apt-get install -y --no-install-recommends \
         openjdk-8-jre \
         openjdk-8-jdk \
@@ -16,12 +16,17 @@ RUN apt-get update && apt-get install -y \
         npm \
         libxml2-utils \
     && npm -g install phonegap@~8 \
-    && curl -L https://services.gradle.org/distributions/gradle-5.4.1-bin.zip -o /tmp/gradle-bin.zip \
+    && curl -L https://services.gradle.org/distributions/gradle-5.5.1-bin.zip -o /tmp/gradle-bin.zip \
     && mkdir -p /opt/gradle && unzip -d /opt/gradle /tmp/gradle-*.zip \
     && curl -L https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip -o /tmp/sdk.zip \
     && mkdir -p /opt/android/sdk && unzip -d /opt/android/sdk /tmp/sdk.zip \
     && yes | /opt/android/sdk/tools/bin/sdkmanager --licenses \
-    && /opt/android/sdk/tools/bin/sdkmanager --install "platform-tools" "build-tools;29.0.0" \
+    && /opt/android/sdk/tools/bin/sdkmanager --install \
+        "platform-tools" \
+        "build-tools;29.0.2" \
+        "platforms;android-27" \
+        "platforms;android-28" \
+        "platforms;android-29" \
     && apt-get remove -y \
         curl \
         zip \
